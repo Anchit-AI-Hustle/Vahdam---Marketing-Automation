@@ -21,11 +21,11 @@ export const THEMES: ThemeContent[] = [
     variantLink: "https://try.vahdam.co.uk/face_puffiness_v1",
     recommendedTemplate: "Variant A",
     assets: {
-      heroFace: "/hero_face.png",
-      ksmRoot: "/ksm.png",
-      periSupport: "/peri.png",
-      bellyFat: "/belly.jpg",
-      tasteAsset: "/taste.png"
+      heroFace: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      ksmRoot: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      periSupport: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      bellyFat: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      tasteAsset: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
     }
   },
   {
@@ -48,11 +48,11 @@ export const THEMES: ThemeContent[] = [
     variantLink: "https://try.vahdam.co.uk/ashwagandha-coffee-n-two-b",
     recommendedTemplate: "Variant B2",
     assets: {
-      heroFace: "/hero_face.png",
-      ksmRoot: "/ksm.png",
-      periSupport: "/peri.png",
-      bellyFat: "/belly.jpg",
-      tasteAsset: "/taste.png"
+      heroFace: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      ksmRoot: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      periSupport: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      bellyFat: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      tasteAsset: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
     }
   },
   {
@@ -75,11 +75,11 @@ export const THEMES: ThemeContent[] = [
     variantLink: "https://try.vahdam.co.uk/face_puffiness_v2",
     recommendedTemplate: "Variant B3",
     assets: {
-      heroFace: "/hero_face.png",
-      ksmRoot: "/ksm.png",
-      periSupport: "/peri.png",
-      bellyFat: "/belly.jpg",
-      tasteAsset: "/taste.png"
+      heroFace: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      ksmRoot: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      periSupport: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      bellyFat: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      tasteAsset: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
     }
   },
   {
@@ -102,11 +102,11 @@ export const THEMES: ThemeContent[] = [
     variantLink: "https://try.vahdam.co.uk/ashwagandha-coffee-starter-kit-new",
     recommendedTemplate: "Variant B4",
     assets: {
-      heroFace: "/hero_face.png",
-      ksmRoot: "/ksm.png",
-      periSupport: "/peri.png",
-      bellyFat: "/belly.jpg",
-      tasteAsset: "/taste.png"
+      heroFace: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      ksmRoot: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      periSupport: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      bellyFat: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      tasteAsset: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
     }
   },
   {
@@ -129,11 +129,11 @@ export const THEMES: ThemeContent[] = [
     variantLink: "https://try.vahdam.co.uk/face_puffiness_v3",
     recommendedTemplate: "Variant E",
     assets: {
-      heroFace: "/hero_face.png",
-      ksmRoot: "/ksm.png",
-      periSupport: "/peri.png",
-      bellyFat: "/belly.jpg",
-      tasteAsset: "/taste.png"
+      heroFace: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      ksmRoot: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      periSupport: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      bellyFat: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      tasteAsset: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
     }
   },
   {
@@ -156,11 +156,11 @@ export const THEMES: ThemeContent[] = [
     variantLink: "https://try.vahdam.co.uk/face_puffiness_v1",
     recommendedTemplate: "Variant C",
     assets: {
-      heroFace: "/hero_face.png",
-      ksmRoot: "/ksm.png",
-      periSupport: "/peri.png",
-      bellyFat: "/belly.jpg",
-      tasteAsset: "/taste.png"
+      heroFace: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800",
+      ksmRoot: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      periSupport: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      bellyFat: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      tasteAsset: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
     }
   }
 ];
@@ -248,14 +248,14 @@ export const FUNNEL_VARIANTS: FunnelVariant[] = [
   }
 ];
 
-export function compileHTML(theme: ThemeContent, variant: FunnelVariant): string {
+export function compileHTML(theme: ThemeContent, variant: FunnelVariant, baseOrigin?: string): string {
   const directCheckoutUrl = "https://www.vahdam.co.uk/checkouts/cn/hWNCmxt7u1jZXyXdxrBlzdzw/en-gb?_r=AQABoe58v9uqX7Pp_-OyqVMFwPrfaxYao4Vl8qwo4KZEuWM&discount=AC_N";
   const cartFlowUrl = "https://try.vahdam.co.uk/ashwagandha-coffee-n-two-b";
   const targetUrl = variant.deliveryPath === 'checkout' ? directCheckoutUrl : cartFlowUrl;
 
-  const heroImage = "/Coffee_Pack_Front.png";
-  const ingredientImage = "/Ingredients_Ashwagandha.jpg";
-  const trustBadgeImage = "/Trust_Badges_Horizontal.png";
+  const heroImage = "https://cdn.shopify.com/s/files/1/2422/3321/files/Coffee_Pack_Front.png";
+  const ingredientImage = "https://cdn.shopify.com/s/files/1/2422/3321/files/Ingredients_Ashwagandha.jpg";
+  const trustBadgeImage = "https://cdn.shopify.com/s/files/1/2422/3321/files/Trust_Badges_Horizontal.png";
   const reviewVideoUrl = "https://cdn.shopify.com/s/files/1/2422/3321/files/Review_Video_1.mp4";
 
   // Build some custom content zones based on variant layout code
@@ -279,7 +279,7 @@ export function compileHTML(theme: ThemeContent, variant: FunnelVariant): string
               Buy Now & Claim Free Gift &rarr;
             </a>
             <div class="mt-4 flex items-center justify-center gap-2">
-              <img src="${trustBadgeImage}" alt="VAHDAM Guarantee badge" style="max-height: 32px;" />
+              <img src="${trustBadgeImage}" referrerpolicy="no-referrer" alt="VAHDAM Guarantee badge" style="max-height: 32px;" />
             </div>
             <p class="text-gray-400 text-xs mt-2 font-mono">Guaranteed secure checkout via Stripe, PayPal, or Apple Pay.</p>
           </div>
@@ -556,6 +556,7 @@ export function compileHTML(theme: ThemeContent, variant: FunnelVariant): string
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  ${baseOrigin ? `<base href="${baseOrigin}/" />` : ''}
   <title>VAHDAM India Ashwagandha Coffee - ${theme.name}</title>
   <style>
     /* Premium Brand Colors & CSS Properties */
@@ -791,7 +792,7 @@ export function compileHTML(theme: ThemeContent, variant: FunnelVariant): string
         </div>
       </div>
       <div class="hero-media-wrapper">
-        <img class="hero-media" src="${heroImage}" alt="VAHDAM India Ashwagandha functional Adaptogen packing set" />
+        <img class="hero-media" src="${heroImage}" referrerpolicy="no-referrer" alt="VAHDAM India Ashwagandha functional Adaptogen packing set" />
       </div>
     </div>
   </section>
@@ -801,7 +802,7 @@ export function compileHTML(theme: ThemeContent, variant: FunnelVariant): string
     <div class="container text-center">
       <p class="text-xs uppercase font-mono tracking-widest text-gray-400 mb-4">VERIFIED SAFE AND CLINICALLY ASSISTURE</p>
       <div class="flex items-center justify-center">
-        <img src="${trustBadgeImage}" alt="VAHDAM verified badges: standard roots, low acid, heavy metals free, non-gmo" style="max-height: 44px; width: auto;" />
+        <img src="${trustBadgeImage}" referrerpolicy="no-referrer" alt="VAHDAM verified badges: standard roots, low acid, heavy metals free, non-gmo" style="max-height: 44px; width: auto;" />
       </div>
     </div>
   </section>
@@ -820,7 +821,7 @@ export function compileHTML(theme: ThemeContent, variant: FunnelVariant): string
 
       <div class="grid grid-2">
         <div style="border-radius: 8px; overflow: hidden;">
-          <img src="${ingredientImage}" alt="Herbal root extraction and medical tea mix compilation" style="width: 100%; height: auto; display: block;" />
+          <img src="${ingredientImage}" referrerpolicy="no-referrer" alt="Herbal root extraction and medical tea mix compilation" style="width: 100%; height: auto; display: block;" />
         </div>
         <div class="flex flex-col gap-6 justify-center">
           <div class="card p-4 bg-cream">

@@ -18,20 +18,142 @@ import {
   Zap,
   Flame,
   Award,
-  BookMarked
+  BookMarked,
+  Megaphone,
+  Globe,
+  ArrowLeft,
+  Check
 } from 'lucide-react';
+
+// Live structured Ad Copywriter Matrix supporting all 6 variations
+export interface AdCopyTemplate {
+  themeId: number;
+  angleName: string;
+  targetInterests: string[];
+  metaHook: string;
+  metaBody: string;
+  metaCTA: string;
+  googleHeadline1: string;
+  googleHeadline2: string;
+  googleHeadline3: string;
+  googleDescription1: string;
+  googleDescription2: string;
+  pMaxCallouts: string[];
+}
+
+const AD_CAMPAIGN_TEMPLATES: AdCopyTemplate[] = [
+  {
+    themeId: 1,
+    angleName: "Face Puffiness & Water Retention",
+    targetInterests: ["Waking Puffiness", "Lymphatic Drainage Specialists", "Gua Sha Enthusiasts", "Morning Face Routine", "Organic Wellness"],
+    metaHook: "Waking up with swelling cheeks & heavy eyes? 🤢 Read this.",
+    metaBody: `Elevated waking cortisol acts like a biological water trap, pooling fluid directly in your cheeks and jawline every morning. Standard high-acid coffee caffeine actually makes it WORSE by triggering immediate cortisol alarms. 
+
+Switch your routine to VAHDAM® Ashwagandha Adaptogen Coffee instead. Our premium formula balances high-altitude Arabica with clinical-grade KSM-66 to buffer morning cortisol spikes and flush systemic water retention naturally. re-contour your facial profile!`,
+    metaCTA: "Buy Now - Claim Free Electric Frother Wand & 40% Off",
+    googleHeadline1: "Waking Puffy Face Solution | VAHDAM® Cortisol Rescue",
+    googleHeadline2: "Ditch The Morning Swelling | Adaptogen Ashwagandha Coffee",
+    googleHeadline3: "Free Frother Wand Included",
+    googleDescription1: "Lower morning cortisol spikes to naturally drain excess facial fluid retention. Safe and clinically proven.",
+    googleDescription2: "Over 2,000,000 happy customers served. Enjoy low acidity gourmet Arabica with chocolatey hazelnut notes.",
+    pMaxCallouts: ["Clinically Tested KSM-66", "Low-Acid Arabica Beans", "No Mushroom Taste", "Free Whisk Wand Inside"]
+  },
+  {
+    themeId: 2,
+    angleName: "Weight Loss & Cortisol Belly Fat",
+    targetInterests: ["Cortisol Belly Recovery", "Visceral Fat Management", "Ketogenic Diet", "Slow Metabolism Support", "Adrenal Balancing"],
+    metaHook: "Why the midsection won't budget despite workout & diet limits... 🤯",
+    metaBody: `Under chronic stress, your adrenal system is locked in survival mode, routing calories specifically to your lower abdomen where cortisol receptors are 4x higher than standard tissue.
+
+Stop standard caffeinated spikes that lock your metabolism! Switch to VAHDAM® Ashwagandha Coffee. Standardized KSM-66 is clinically proven to lower baseline stress indices by up to 28%, turning off the visceral fat protection signals. Rebuild continuous fat-burning with rich chocolate hazelnuts flavor!`,
+    metaCTA: "Tap to Get 40% Off The Metabolism Restart Kit Today",
+    googleHeadline1: "Visceral Belly Fat Support | Try Adaptogen Wellness Swap",
+    googleHeadline2: "Lower Cortisol Fatigue | VAHDAM® Ashwagandha Coffee",
+    googleHeadline3: "Starter Kit 40% Off Launch",
+    googleDescription1: "Clinically proven to reduce cortisol levels up to 28%. Release stubborn stress belly weight.",
+    googleDescription2: "Barista-level organic Arabica blended with functional dual-extraction mushrooms for lasting thermogenesis.",
+    pMaxCallouts: ["28% Cortisol Reduction", "Dual-Extraction Chaga", "Zero Palpitations", "Sustained Thermogenesis"]
+  },
+  {
+    themeId: 3,
+    angleName: "Anxiety, Jitters & Coffee Crashes",
+    targetInterests: ["High Caffeine Sensitivity", "Caffeine Jitters Alert", "Stress Relief Hacks", "Brain Fog & ADHD Hacks", "Alternative Clean Energy"],
+    metaHook: "Love gourmet coffee flavor but terrified of the 3 PM crash? ☕",
+    metaBody: `Standard commercial instant coffees release caffeine into your blood in an aggressive, concentrated surge. This triggers adrenaline panics, sweaty palms, and that major 3 PM afternoon sleepiness collapse. 
+
+VAHDAM® India blends AA-grade sun-dried coffee with calming L-Theanine, Lion's Mane, and standardized KSM-66 Ashwagandha. It buffers absorption curves to deliver a stable, silky 6 hours of compose, laser focus with absolute safety. No racing hearts, no panic.`,
+    metaCTA: "Claim Barista-Grade Flavor and Zero Jitters (40% Off Order)",
+    googleHeadline1: "Say Goodbye To Coffee Jitters | Stable 6hr Focus Flow",
+    googleHeadline2: "Zero Sudden Crash Events | VAHDAM® Ashwagandha Coffee",
+    googleHeadline3: "Order Now For Free Gift Kit",
+    googleDescription1: "Formulated with amino-paired adaptogens to smooth out coffee absorption curves. Feel bright and calm.",
+    googleDescription2: "Includes dual-action Lion's Mane to cross brain-cell gates for instant daily sharpness.",
+    pMaxCallouts: ["6-Hour Smooth Energy", "Zero Caffeine Anxiety", "Alpha Brain Wave Support", "Barista Microfoam Approved"]
+  },
+  {
+    themeId: 4,
+    angleName: "Hormone Balance & Perimenopause",
+    targetInterests: ["Perimenopause Relief", "Estrogen Progesterone Balancing", "Night Sweats Remedies", "Hormonal Fluid Retention", "Adrenal Glands Health"],
+    metaHook: "Over 40? Here is why standard coffee makes bloating and hot flashes worse.",
+    metaBody: `Fluctuating midlife estrogen levels combined with high waking stress cause severe night sweats, water retention, and sudden daily fatigue. Putting high-sugar stimulators into your system simply strains exhausted thyroid glands.
+
+Restore homeostasis with VAHDAM® Ashwagandha Coffee. Standardized KSM-66 acts directly on your HPA endocrine axis to calm thyroid and adrenal overload. Flush hormone-induced bloating, soothe sudden hot flashes, and maintain steady, cooling focus all morning.`,
+    metaCTA: "Get Adrenal Homeostasis & Free Custom Frother Wand",
+    googleHeadline1: "Estrogen & Hormonal Bloat | Try Clinical-Grade Swap",
+    googleHeadline2: "Cool Night Sweats Naturally | VAHDAM® Ashwagandha Coffee",
+    googleHeadline3: "Organic Menopause Solutions",
+    googleDescription1: "Soothe adrenal fatigue and stabilize HPA stress fluctuations. Re-energize exhausted thyroids.",
+    googleDescription2: "Zero additives, non-GMO, gluten-free, standard clean roots. Dispatched within 24 hours.",
+    pMaxCallouts: ["Calms Endocrine Axis", "Soothes Overnight Sweats", "Estrogen-Safe Formula", "Low-Acid Gourmet Beans"]
+  },
+  {
+    themeId: 5,
+    angleName: "Gut Health & Digestive Bloating",
+    targetInterests: ["Leaky Gut Treatment", "Stomach Bloating Relief", "IBS Support & Recipes", "Low-Acid Coffee Brands", "Anti-inflammatory Living"],
+    metaHook: "Is your morning coffee bloating your belly into a balloon? 🎈",
+    metaBody: `That tight, uncomfortable mid-day gut inflation is direct inflammation of your digestive tract mucosal cells caused by the extreme, harsh acidity of generic instant coffees.
+
+Our low-acid certified mountain Arabica is custom-blended with organic ginger/curcumin turmeric roots and black pepper to protect delicate digestive cells. Combined with soothing Ashwagandha, it silences hyperactive gut-tension loops, leaving your belly completely flat and comfortable after you sip.`,
+    metaCTA: "De-Bloat Your Morning Coffee Ritual (40% Off Direct)",
+    googleHeadline1: "Ditch The Coffee Acid-Bloat | Low-Acid Turmeric Coffee",
+    googleHeadline2: "Heal Gastric Mucosal Cells | VAHDAM® Ashwagandha Blend",
+    googleHeadline3: "Flat Belly Solutions Today",
+    googleDescription1: "Gently formulated with anti-inflammatory active curcumin and ginger to calm heavy gastric cramps.",
+    googleDescription2: "Tastes like true premium dark espresso chocolate notes with absolutely zero mushroom background flavor.",
+    pMaxCallouts: ["Active Curcumin Protect", "Low-Acid Sun-Dried Beans", "No Heavy Metals Spikes", "Easily Digested Premium"]
+  },
+  {
+    themeId: 6,
+    angleName: "Burnout & Adrenal Recovery",
+    targetInterests: ["Chronic Chronic Fatigue", "Adrenal Fatigue Recovery", "Overworked Professionals", "Cortisol Restoration", "Brain Fog Remedies"],
+    metaHook: "Stop constantly borrowing tomorrow's energy to make it through today. 🥱",
+    metaBody: `Relying on artificial energy spikes and toxic high-voltage caffeine drinks wears down your adrenal receptors. The results? Severe afternoon crashes, poor night sleep cycles, and persistent brain fog.
+
+Feed and heal your vital system with VAHDAM® Ashwagandha Coffee. Standardized KSM-66 root extracts combined with organic Chaga and organic Lion's Mane mushrooms build up your baseline mitochondrial stores rather than depleting them. Power up smooth, peaceful recovery.`,
+    metaCTA: "Get Somatic Energy Rebuild and Claim Free Milk Frother",
+    googleHeadline1: "Overcoming Adrenal Burnout | Restorative Cortisol Coffee",
+    googleHeadline2: "Nourish Exhausted Glands | VAHDAM® Ashwagandha Coffee",
+    googleHeadline3: "Heal Chronic Fatigue Naturally",
+    googleDescription1: "Recharge brain energy without standard heart palpitations or stressful crashes. Safe organic remedy.",
+    googleDescription2: "Certified organic Chaga/Lion's Mane standardized extract targets critical nerve growth factors directly.",
+    pMaxCallouts: ["Nourishes Adrenal Glands", "Nerve Growth Support", "Stabilizes Sleep Cycles", "40% Exclusive Launch Promo"]
+  }
+];
 
 export default function App() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeContent>(THEMES[0]);
   const [selectedVariant, setSelectedVariant] = useState<FunnelVariant>(FUNNEL_VARIANTS[0]);
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop');
-  const [activeTab, setActiveTab] = useState<'landing' | 'mailer' | 'automation' | 'prompt'>('landing');
+  const [activeTab, setActiveTab] = useState<'landing' | 'landing-variations' | 'ads' | 'mailer' | 'automation' | 'prompt'>('landing');
   const [copied, setCopied] = useState(false);
+  const [copiedAdText, setCopiedAdText] = useState(false);
+  const [activeAdNetwork, setActiveAdNetwork] = useState<'meta' | 'google'>('meta');
+  const [selectedAdThemeId, setSelectedAdThemeId] = useState<number>(1);
   const [generatedHTML, setGeneratedHTML] = useState('');
 
   useEffect(() => {
     // Generate page HTML every time theme or variant selection shifts
-    const html = compileHTML(selectedTheme, selectedVariant);
+    const html = compileHTML(selectedTheme, selectedVariant, window.location.origin);
     setGeneratedHTML(html);
   }, [selectedTheme, selectedVariant]);
 
@@ -59,14 +181,28 @@ export default function App() {
       {/* Dynamic Navigation Header */}
       <header className="bg-[#004B49] text-white border-b border-[#D4A373]/20 py-4 px-6 sticky top-0 z-50 shadow-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="p-2 bg-[#D4A373] rounded-lg text-[#004B49] font-bold shadow-inner">
-              <Sparkles className="w-6 h-6" />
-            </span>
-            <div>
-              <h1 className="text-xl font-bold tracking-tight uppercase font-serif">VAHDAM India</h1>
-              <p className="text-xs text-[#D4A373] font-mono tracking-wider">LIFECYCLE OS &bull; Acquisition & Retention Suite</p>
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <div className="flex items-center gap-3">
+              <span className="p-2 bg-[#D4A373] rounded-lg text-[#004B49] font-bold shadow-inner animate-pulse">
+                <Sparkles className="w-6 h-6" />
+              </span>
+              <div>
+                <h1 className="text-xl font-bold tracking-tight uppercase font-serif">VAHDAM India</h1>
+                <p className="text-xs text-[#D4A373] font-mono tracking-wider">LIFECYCLE OS &bull; Campaign Suite</p>
+              </div>
             </div>
+            
+            {/* Core back-link on mobile preview */}
+            <a 
+              href="https://vahdam-lifecycle-os.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="md:hidden flex items-center gap-1 px-2.5 py-1 text-xs rounded border border-[#D4A373]/40 text-[#D4A373] hover:text-white hover:border-[#D4A373] font-mono transition-all bg-[#0B4A47]"
+              id="back-to-vercel-mobile"
+            >
+              <Globe className="w-3.5 h-3.5 animate-spin-slow" />
+              <span>Core OS</span>
+            </a>
           </div>
           
           <div className="flex flex-wrap items-center gap-2">
@@ -74,20 +210,34 @@ export default function App() {
               onClick={() => setActiveTab('landing')}
               className={`px-4 py-2 text-sm font-semibold rounded-md transition-all flex items-center gap-2 ${
                 activeTab === 'landing' 
-                  ? 'bg-[#D4A373] text-[#004B49] shadow-sm' 
-                  : 'hover:bg-white/10 text-white'
+                  ? 'bg-[#D4A373] text-[#004B49] shadow-sm font-medium' 
+                  : 'hover:bg-white/10 text-white/90'
               }`}
+              id="nav-landing-hub-tab"
             >
               <Layers className="w-4 h-4" />
-              <span>Landing Page Hub</span>
+              <span>Landing Pages</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('ads')}
+              className={`px-4 py-2 text-sm font-semibold rounded-md transition-all flex items-center gap-2 ${
+                activeTab === 'ads' 
+                  ? 'bg-[#D4A373] text-[#004B49] shadow-sm font-medium' 
+                  : 'hover:bg-white/10 text-white/90'
+              }`}
+              id="nav-campaign-ads-tab"
+            >
+              <Megaphone className="w-4 h-4" />
+              <span>Ad Campaigns</span>
             </button>
             <button
               onClick={() => setActiveTab('mailer')}
               className={`px-4 py-2 text-sm font-semibold rounded-md transition-all flex items-center gap-2 ${
                 activeTab === 'mailer' 
-                  ? 'bg-[#D4A373] text-[#004B49] shadow-sm' 
-                  : 'hover:bg-white/10 text-white'
+                  ? 'bg-[#D4A373] text-[#004B49] shadow-sm font-medium' 
+                  : 'hover:bg-white/10 text-white/90'
               }`}
+              id="nav-mailer-matrix-tab"
             >
               <Mail className="w-4 h-4" />
               <span>Mailer Matrix</span>
@@ -99,6 +249,7 @@ export default function App() {
                   ? 'bg-[#D4A373] text-[#004B49] shadow-sm' 
                   : 'hover:bg-white/10 text-white'
               }`}
+              id="nav-automation-prd-tab"
             >
               <Zap className="w-4 h-4" />
               <span>Automation PRD</span>
@@ -110,10 +261,23 @@ export default function App() {
                   ? 'bg-[#D4A373] text-[#004B49] shadow-sm' 
                   : 'hover:bg-white/10 text-white'
               }`}
+              id="nav-master-prompts-tab"
             >
               <FileCode className="w-4 h-4" />
               <span>Master Prompts</span>
             </button>
+
+            {/* Core backlink on desktop view */}
+            <a 
+              href="https://vahdam-lifecycle-os.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-md border border-[#D4A373]/30 hover:border-[#D4A373] text-xs font-mono font-bold uppercase tracking-wider text-[#D4A373] hover:text-white hover:bg-white/5 transition-all ml-2"
+              id="back-to-vercel-desktop"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>Core OS Dashboard</span>
+            </a>
           </div>
         </div>
       </header>
@@ -291,13 +455,309 @@ export default function App() {
                       title="VAHDAM Custom LP Compile Frame"
                       srcDoc={generatedHTML}
                       className="w-full h-full border-0"
-                      sandbox="allow-scripts"
+                      sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                     />
                   </div>
                 </div>
               </div>
             </div>
 
+          </div>
+        )}
+
+        {/* CAMPAIGN ADS STUDIO TAB */}
+        {activeTab === 'ads' && (
+          <div className="space-y-8 animate-fadeIn">
+            {/* Header Description */}
+            <div className="card p-6 border border-[#D4A373]/20 bg-[#004B49] text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div>
+                <span className="text-xs font-mono text-[#D4A373] tracking-widest uppercase font-bold">CROSS-CHANNEL ACQUISITION ENGINE</span>
+                <h3 className="font-serif text-3xl font-bold mt-1 text-white">Interactive Ad Campaign Studio</h3>
+                <p className="text-sm text-cream/70 mt-1 max-w-2xl">
+                  Deploy targeted Meta and Google Ads optimized across our 6 biological cortisol-conversion pillars. Fully synced with campaign funnels.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 bg-[#0B4A47] p-2.5 rounded border border-[#D4A373]/30 text-xs font-mono">
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span>SYSTEM LINK ACTIVE &bull; VAHDAM CLOUD</span>
+              </div>
+            </div>
+
+            {/* Selector Pills across all 6 variations */}
+            <div className="space-y-2">
+              <label className="block text-xs font-mono text-[#004B49] uppercase tracking-widest font-bold">
+                1. Switch Campaign Variations (6 Channels)
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {AD_CAMPAIGN_TEMPLATES.map((tpl) => (
+                  <button
+                    key={tpl.themeId}
+                    onClick={() => setSelectedAdThemeId(tpl.themeId)}
+                    className={`px-4 py-2 text-xs font-semibold rounded-full border transition-all ${
+                      selectedAdThemeId === tpl.themeId
+                        ? 'bg-[#004B49] text-white border-[#004B49] shadow-sm'
+                        : 'bg-white text-gray-700 hover:bg-gray-100 border-gray-200'
+                    }`}
+                  >
+                    Angle {tpl.themeId}: {tpl.angleName}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Split layout: Selector details & Previews */}
+            {(() => {
+              const currentTpl = AD_CAMPAIGN_TEMPLATES.find(t => t.themeId === selectedAdThemeId) || AD_CAMPAIGN_TEMPLATES[0];
+              const correspondingThemeObj = THEMES.find(t => t.id === selectedAdThemeId);
+              
+              return (
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                  {/* Left Column: Media Buyer Strategy Setup */}
+                  <div className="lg:col-span-5 space-y-6">
+                    <div className="card p-6 bg-white border border-gray-200 shadow-sm space-y-4">
+                      <div>
+                        <span className="badge mb-2 bg-[#FBF5EA] text-[#004B49]">BUYER PARAMETERS Matrix</span>
+                        <h4 className="text-lg font-serif font-bold text-[#004B49]">{currentTpl.angleName}</h4>
+                        <p className="text-xs text-gray-500 mt-1 italic">
+                          <strong>Active Strategy Path:</strong> {correspondingThemeObj?.landingPageVariant || "No associated Variant Path"}
+                        </p>
+                      </div>
+
+                      <div className="border-t border-gray-100 pt-3 space-y-2.5">
+                        <div className="text-xs">
+                          <span className="font-mono text-gray-400 block uppercase font-semibold">Core Medical Problem:</span>
+                          <span className="text-gray-700 leading-relaxed font-sans">{correspondingThemeObj?.coreProblem}</span>
+                        </div>
+                        
+                        <div className="text-xs">
+                          <span className="font-mono text-gray-400 block uppercase font-semibold">Target Interest Demographics (Meta/Google Adwords):</span>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {currentTpl.targetInterests.map((interest, idx) => (
+                              <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-[10px] font-mono border border-gray-150">
+                                {interest}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="text-xs">
+                          <span className="font-mono text-gray-400 block uppercase font-semibold">PMax Callout Highlights:</span>
+                          <ul className="list-disc list-inside space-y-1 mt-1 text-gray-600 font-sans">
+                            {currentTpl.pMaxCallouts.map((callout, idx) => (
+                              <li key={idx}>{callout}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-gray-100 pt-4 flex gap-2">
+                        <button
+                          onClick={() => {
+                            const data = `--- ${activeAdNetwork.toUpperCase()} COLLATERAL ---\n` +
+                              (activeAdNetwork === 'meta' 
+                                ? `Hook: ${currentTpl.metaHook}\n\nCopy:\n${currentTpl.metaBody}\n\nCTA: ${currentTpl.metaCTA}`
+                                : `Headline 1: ${currentTpl.googleHeadline1}\nHeadline 2: ${currentTpl.googleHeadline2}\nHeadline 3: ${currentTpl.googleHeadline3}\nDescription 1: ${currentTpl.googleDescription1}\nDescription 2: ${currentTpl.googleDescription2}`);
+                            navigator.clipboard.writeText(data);
+                            setCopiedAdText(true);
+                            setTimeout(() => setCopiedAdText(false), 2000);
+                          }}
+                          className="flex-1 px-4 py-2 bg-[#D4A373] text-[#004B49] text-xs font-bold rounded hover:bg-[#c39262] transition-colors flex items-center justify-center gap-1.5"
+                        >
+                          {copiedAdText ? (
+                            <>
+                              <Check className="w-3.5 h-3.5" />
+                              <span>Copied! Ready to Paste</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3.5 h-3.5" />
+                              <span>Copy Selected Ad Copy</span>
+                            </>
+                          )}
+                        </button>
+                        
+                        <a 
+                          href={correspondingThemeObj?.variantLink || "https://try.vahdam.co.uk"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors rounded text-xs font-bold flex items-center justify-center gap-1 border border-gray-200"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="card p-5 bg-[#FAF5EA] border border-[#D4A373]/30 rounded text-xs space-y-2.5">
+                      <h5 className="font-serif font-bold text-[#004B49] flex items-center gap-1.5">
+                        <Award className="w-4 h-4 text-[#D4A373]" />
+                        <span>Creative Alignment Guidelines</span>
+                      </h5>
+                      <p className="text-gray-600 leading-relaxed font-sans">
+                        Always pair these hooks with close-up imagery showing <strong>waking puffy face comparisons</strong> or clean shots of <strong>organic ashwagandha powder blending</strong> back into a gourmet frothy latte. The direct checkout links trigger auto-applied 40% discounts at the destination.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Visual Campaign Mockups */}
+                  <div className="lg:col-span-7 flex flex-col gap-4">
+                    {/* Mockup tabs trigger */}
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 flex items-center justify-between shadow-sm">
+                      <span className="text-xs font-mono font-bold text-[#004B49] uppercase">2. Select Screen Mockup Channel:</span>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setActiveAdNetwork('meta')}
+                          className={`px-3 py-1.5 text-xs font-bold font-mono uppercase tracking-wider rounded transition-all ${
+                            activeAdNetwork === 'meta'
+                              ? 'bg-[#004B49] text-white'
+                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          }`}
+                        >
+                          Meta Feed Mockup (FB/IG)
+                        </button>
+                        <button
+                          onClick={() => setActiveAdNetwork('google')}
+                          className={`px-3 py-1.5 text-xs font-bold font-mono uppercase tracking-wider rounded transition-all ${
+                            activeAdNetwork === 'google'
+                              ? 'bg-[#004B49] text-white'
+                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          }`}
+                        >
+                          Google Search (PPC Text)
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Channel Canvas */}
+                    <div className="bg-gray-100 p-6 rounded-lg border border-gray-200 min-h-[480px] flex items-center justify-center">
+                      {activeAdNetwork === 'meta' ? (
+                        /* Meta Mockup */
+                        <div className="w-full max-w-md bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md font-sans text-xs text-gray-900">
+                          {/* Profile details */}
+                          <div className="p-4 flex items-center justify-between border-b border-gray-100">
+                            <div className="flex items-center gap-2">
+                              <div className="w-9 h-9 rounded-full bg-[#004B49] text-white flex items-center justify-center font-serif font-extrabold text-sm border-2 border-[#D4A373]">
+                                V
+                              </div>
+                              <div>
+                                <div className="font-bold flex items-center gap-1 text-[13px] text-gray-900">
+                                  <span>VAHDAM India</span>
+                                  <span className="bg-blue-500 text-white rounded-full p-0.5 text-[8px] flex items-center justify-center" style={{ width: '12px', height: '12px' }}>✓</span>
+                                </div>
+                                <span className="text-[10px] text-gray-500 font-mono">Sponsored &bull; Fully Tracked Link</span>
+                              </div>
+                            </div>
+                            <span className="text-gray-400 font-bold hover:text-gray-600 cursor-pointer text-base pb-2">•••</span>
+                          </div>
+
+                          {/* Post caption text */}
+                          <div className="px-4 py-3 space-y-2 text-[12px] leading-relaxed text-gray-800">
+                            <p className="font-semibold text-gray-900 text-[13px]">{currentTpl.metaHook}</p>
+                            <p className="whitespace-pre-line">{currentTpl.metaBody}</p>
+                          </div>
+
+                          {/* Image preview with CTA */}
+                          <div className="relative border-y border-gray-100 bg-gray-50">
+                            <img
+                              src={correspondingThemeObj?.assets.heroFace || "https://images.unsplash.com/photo-1544005313-94ddf0286df2"}
+                              referrerPolicy="no-referrer"
+                              alt="Meta Creative Image"
+                              className="w-full h-64 object-cover"
+                            />
+                            {/* CTA Banner overlay */}
+                            <div className="bg-white border-t border-gray-100 p-3 flex items-center justify-between">
+                              <div className="space-y-0.5 pr-2">
+                                <span className="text-[10px] tracking-wider text-gray-400 font-mono uppercase block">TRY.VAHDAM.CO.UK</span>
+                                <span className="text-xs font-bold text-gray-900 line-clamp-1">{currentTpl.metaCTA}</span>
+                              </div>
+                              <a 
+                                href={correspondingThemeObj?.variantLink || "https://try.vahdam.co.uk"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-4 py-2 bg-[#F1F3F5] hover:bg-gray-200 font-bold text-xs uppercase tracking-wider rounded text-gray-900 transition-colors border border-gray-300"
+                              >
+                                Shop Now
+                              </a>
+                            </div>
+                          </div>
+
+                          {/* Mock bottom icons */}
+                          <div className="px-4 py-2.5 bg-white text-gray-500 text-[11px] flex justify-between border-b border-gray-100">
+                            <span>👍 🚀 Over 4.8k comments and engagements</span>
+                            <div className="flex gap-3">
+                              <span>324 Comments</span>
+                              <span>98 Shares</span>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        /* Google Mockup */
+                        <div className="w-full max-w-xl bg-white border border-gray-200 rounded-lg p-5 shadow-md font-sans text-xs">
+                          <div className="flex items-center gap-1 text-gray-500 mb-1">
+                            <span className="p-1 px-1.5 bg-gray-100 text-[9px] font-bold rounded uppercase tracking-wider text-gray-600 mr-1.5">Ad</span>
+                            <span className="text-[11px]">https://try.vahdam.co.uk/ashwagandha-coffee</span>
+                          </div>
+
+                          {/* Clickable Blue headlines */}
+                          <h4 className="text-lg text-[#1a0dab] hover:underline cursor-pointer font-medium leading-snug">
+                            {currentTpl.googleHeadline1} | {currentTpl.googleHeadline2}
+                          </h4>
+
+                          {/* Description info */}
+                          <p className="text-[13px] text-gray-600 mt-1 leading-relaxed">
+                            {currentTpl.googleDescription1} {currentTpl.googleDescription2}
+                          </p>
+
+                          {/* Site extensions bullets */}
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-2 mt-4 pt-3 border-t border-gray-100 text-[#1a0dab]">
+                            <div>
+                              <span className="hover:underline cursor-pointer block font-semibold text-[13px]">40% Off Direct Launch Deal</span>
+                              <span className="text-gray-500 text-xs mt-0.5 block line-clamp-1">Auto-applied coupon discount limits online copies.</span>
+                            </div>
+                            <div>
+                              <span className="hover:underline cursor-pointer block font-semibold text-[13px]">Free Premium Milk Frother</span>
+                              <span className="text-gray-500 text-xs mt-0.5 block line-clamp-1">Every bundle contains custom barista frothing kit tools.</span>
+                            </div>
+                            <div>
+                              <span className="hover:underline cursor-pointer block font-semibold text-[13px]">Rich Chocolate Hazelnut</span>
+                              <span className="text-gray-500 text-xs mt-0.5 block line-clamp-1">No bitter medicinal taste. Low acid gastro safety.</span>
+                            </div>
+                            <div>
+                              <span className="hover:underline cursor-pointer block font-semibold text-[13px]">2,500+ Verified Trust Reviews</span>
+                              <span className="text-gray-500 text-xs mt-0.5 block line-clamp-1">Sourced from real UK buyers over active 14 days periods.</span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* Campaign Summary Deck footer */}
+            <div className="card p-6 border border-gray-200 bg-white shadow-sm space-y-4">
+              <h4 className="font-serif text-xl text-[#004B49] font-bold">Cross-Channel Deployment Matrix Overview</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Review strategy parameters for all campaign variants. Sourced directly to Klaviyo flow handles and PageDeck components.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-sans">
+                {AD_CAMPAIGN_TEMPLATES.map(tpl => (
+                  <div key={tpl.themeId} className="p-4 bg-gray-50 border border-gray-150 rounded flex flex-col justify-between">
+                    <div>
+                      <span className="font-mono text-[#D4A373] uppercase font-bold text-[10px]">Variant {tpl.themeId} Angle</span>
+                      <h5 className="font-bold text-[#004B49] mt-0.5 mb-1.5">{tpl.angleName}</h5>
+                      <p className="text-gray-600 line-clamp-2 text-[11px] leading-relaxed mb-3">{tpl.metaHook}</p>
+                    </div>
+                    <button
+                      onClick={() => setSelectedAdThemeId(tpl.themeId)}
+                      className="w-full py-1 border border-[#004B49]/20 hover:border-[#004B49] text-center font-bold font-mono text-[9px] uppercase tracking-wider text-[#004B49] rounded mt-2 bg-white transition-all"
+                    >
+                      Load Creative Workspace
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
